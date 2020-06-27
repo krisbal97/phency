@@ -97,4 +97,4 @@ else:
         gvGraph.get_node(term).attr['label'] = text
     setColors()
     gvGraph.layout('dot')
-    gvGraph.draw('complex_output.png')
+    gvGraph.draw('gene_output.png')
