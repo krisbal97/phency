@@ -71,4 +71,4 @@ for term, name in names.items():
     gvGraph.get_node(term).attr['label'] = text
 setColors()
 gvGraph.layout('dot')
-gvGraph.draw('pokus2.png')
+gvGraph.draw('cnv_output.png')
