@@ -7,9 +7,10 @@ the data storing information about CNVs and their relation to phenotypes, genes 
 
 complexGraph.py
 Complex model, program, which returns graph of prediction of phenotype based on combination of Gene model and CNV overlap model
-input: startposition on sequence, endposition, chromosome
+input: ID of CNV in our data, startposition on sequence, endposition, chromosome
 output: complex_output.png storing the graph
 To use this script, the files hpo.txt, cnvs_big.tsv and the file genes_to_phenotypes4.tsv (which can be obtained by concatenation of files genes_to_phenotypes4a.tsv and genes_to_phenotypes4b.tsv respectively) are required.
+Since the only data we had were the cnvs_big.tsv, this script is in state to be able to process input from our data. Thus also the ID in input is required.
 
 genes_to_phenotypes4a.tsv and genes_to_phenotypes4b.tsv
 These filesa are ready to be concatenated to file genes_to_phenotypes4.tsv, since the file genes_to_phenotypes4.tsv was too large to be uploaded.
@@ -22,15 +23,17 @@ This script counts the number of explicit terms which occured in the same depth 
 
 graphForGene.py
 Gene model, program, which returns graph of prediction of phenotype based on affected genes
-input: startposition on sequence, endposition, chromosome
+input: ID of CNV in our data, startposition on sequence, endposition, chromosome
 output: gene_output.png storing the graph
 To use this script, the files hpo.txt, cnvs_big.tsv and the file genes_to_phenotypes4.tsv (which can be obtained by concatenation of files genes_to_phenotypes4a.tsv and genes_to_phenotypes4b.tsv respectively) are required.
+Since the only data we had were the cnvs_big.tsv, this script is in state to be able to process input from our data. Thus also the ID in input is required.
 
 graphForSequence.py
 CNV overlap model, program, which returns graph of prediction of phenotype based on overlps of CNVs
-input: startposition on sequence, endposition, chromosome
+input: ID of CNV in our data, startposition on sequence, endposition, chromosome
 output: cnv_output.png storing the graph
-To use this script, the files hpo.txt, cnvs_big.tsv are needed. 
+To use this script, the files hpo.txt, cnvs_big.tsv are needed.
+Since the only data we had were the cnvs_big.tsv, this script is in state to be able to process input from our data. Thus also the ID in input is required.
 
 hpo.txt
 Our modified version of HPO database
