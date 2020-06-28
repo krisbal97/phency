@@ -13,7 +13,7 @@ graph = obonet.read_obo(database)
 database.close()
 id_to_name = {id_: data.get('name') for id_, data in graph.nodes(data = True)}
 
-#myID = ""
+myID = ""
 myStart = 0
 myEnd = 0
 myChromosome = ""
@@ -35,8 +35,7 @@ def findOverlap():
         start = int(columns[6])
         end = int(columns[7])
         entryID = columns[1].strip()
-        #if not entryID==myID and myChromosome==chromosome and not end<myStart and not start>myEnd:
-        if myChromosome==chromosome and not end<myStart and not start>myEnd:
+        if not entryID==myID and myChromosome==chromosome and not end<myStart and not start>myEnd:
             score = calculateScore_seq(start, end)
             terms = columns[4].strip().split(";")
             for term in terms:
@@ -55,10 +54,10 @@ def setColors():
 
 print("Enter coordinates and chromosome:")
 coor = input().strip().split(" ")
-#myID = coor[0]
-myStart = int(coor[0])
-myEnd = int(coor[1])
-myChromosome = coor[2]
+myID = coor[0]
+myStart = int(coor[1])
+myEnd = int(coor[2])
+myChromosome = coor[3]
 findOverlap()
 nodes = myScore.keys()
 names = {term: id_to_name[term] for term in nodes}
